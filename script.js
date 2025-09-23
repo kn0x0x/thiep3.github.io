@@ -79,25 +79,48 @@ document.addEventListener('DOMContentLoaded', function() {
             
             modalContent.innerHTML = `
                 <h2 style="color: #3A473B; margin-bottom: 20px; font-size: 1.8rem;">RSVP</h2>
-                <p style="color: #666; margin-bottom: 30px; line-height: 1.6;">
-                    Cảm ơn bạn đã quan tâm đến lễ cưới của chúng tôi!<br>
-                    Thank you for your interest in our wedding!
+                <p style="color: #666; margin-bottom: 16px; line-height: 1.6;">
+                    Bạn có muốn tham gia buổi tiệc không?
                 </p>
-                <p style="color: #666; margin-bottom: 30px;">
-                    Vui lòng liên hệ trực tiếp với chúng tôi qua số điện thoại hoặc email để xác nhận tham dự.<br>
-                    Please contact us directly via phone or email to confirm your attendance.
-                </p>
-                <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
-                    <a href="tel:9723173712" style="background-color: #3A473B; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600;">Call Thanh Phục</a>
-                    <a href="tel:8177702066" style="background-color: #3A473B; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600;">Call Khánh Hạ</a>
+                <div style="display:flex; gap:16px; justify-content:center; margin-bottom: 18px;">
+                    <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                        <input type="radio" name="rsvpAttend" value="Yes" checked> Có
+                    </label>
+                    <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+                        <input type="radio" name="rsvpAttend" value="No"> Không
+                    </label>
                 </div>
-                <button onclick="this.closest('.modal').remove()" style="background-color: #662D1E; color: white; border: none; padding: 10px 30px; border-radius: 5px; cursor: pointer; font-weight: 600;">Đóng / Close</button>
+                <div style="display:grid; gap:12px; text-align:left; margin-bottom: 18px;">
+                    <label>Họ và tên<br><input id="rsvpName" type="text" placeholder="Nhập họ tên" style="width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:6px;"></label>
+                    <label>Số điện thoại<br><input id="rsvpPhone" type="tel" placeholder="Nhập số điện thoại" style="width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:6px;"></label>
+                </div>
+                <div style="display:flex; gap:10px; justify-content:center; margin-top: 6px;">
+                    <button id="rsvpSubmitBtn" style="background-color:#3A473B; color:#fff; border:none; padding:10px 24px; border-radius:6px; font-weight:600; cursor:pointer;">Gửi xác nhận</button>
+                    <button onclick="this.closest('.modal').remove()" style="background-color: #662D1E; color: white; border: none; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-weight: 600;">Đóng</button>
+                </div>
+                <p style="color:#888; font-size:12px; margin-top:10px;">Chúng mình sẽ nhận thông tin qua email.</p>
             `;
             
             modal.className = 'modal';
             modal.appendChild(modalContent);
             document.body.appendChild(modal);
             
+            // Handle submit: compose mailto
+            const submitBtn = modalContent.querySelector('#rsvpSubmitBtn');
+            submitBtn.addEventListener('click', function() {
+                const name = (modalContent.querySelector('#rsvpName').value || '').trim();
+                const phone = (modalContent.querySelector('#rsvpPhone').value || '').trim();
+                const attend = modalContent.querySelector('input[name="rsvpAttend"]:checked')?.value || 'Yes';
+                if (!name || !phone) {
+                    alert('Vui lòng điền đầy đủ Họ tên và SĐT.');
+                    return;
+                }
+                const subject = encodeURIComponent('RSVP - Xác nhận tham dự');
+                const body = encodeURIComponent(`Trạng thái: ${attend}\nHọ tên: ${name}\nSĐT: ${phone}`);
+                const mailto = `mailto:ntp100196@gmail.com,duonghatrangtk@gmail.com?subject=${subject}&body=${body}`;
+                window.location.href = mailto;
+            });
+
             // Close modal when clicking outside
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
