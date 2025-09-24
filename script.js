@@ -175,6 +175,42 @@ document.addEventListener('DOMContentLoaded', function() {
         heroSection.style.opacity = '1';
         heroSection.style.transform = 'translateY(0)';
     }
+
+    // Background music autoplay + toggle (mp.mp3)
+    const audio = document.getElementById('bgm');
+    const btn = document.getElementById('audioToggle');
+    if (audio && btn) {
+        const setBtn = (playing) => {
+            if (playing) { btn.classList.remove('paused'); btn.textContent = '♪'; btn.title = 'Tắt nhạc'; }
+            else { btn.classList.add('paused'); btn.textContent = '⏸'; btn.title = 'Bật nhạc'; }
+        };
+
+        const resumeOnGesture = () => {
+            audio.muted = false;
+            audio.play().then(() => setBtn(true)).catch(() => setBtn(false));
+        };
+
+        // Autoplay muted to satisfy mobile policies, then unmute on first gesture
+        if (!audio.paused) setBtn(true);
+        ['click','touchstart','pointerdown','keydown'].forEach(evt => {
+            window.addEventListener(evt, resumeOnGesture, { once: true });
+        });
+
+        // Toggle button
+        ['click','touchstart'].forEach(evt => {
+            btn.addEventListener(evt, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (audio.paused) {
+                    audio.muted = false;
+                    audio.play().then(() => setBtn(true));
+                } else {
+                    audio.pause();
+                    setBtn(false);
+                }
+            });
+        });
+    }
 });
 
 // Add some additional interactive features

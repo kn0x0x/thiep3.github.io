@@ -1,6 +1,28 @@
 .flipbook-section { background: #eeede7; padding: 20px 0 10px; }
 .flipbook-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .flipbook-container ._df_book { box-shadow: 0 8px 24px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+
+/* Audio toggle button */
+.audio-toggle {
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(97,41,22,0.9);
+    color: #fff;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    z-index: 99999;
+    -webkit-tap-highlight-color: transparent;
+}
+.audio-toggle.paused { background: rgba(0,0,0,0.55); }
+.audio-toggle:focus { outline: none; }
 .note-section {
     background-color: #eeede7;
     padding: 80px 0 60px 0;
@@ -305,8 +327,8 @@ body {
 .wedding-photo {
     width: 100%;
     max-width: 400px;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
@@ -462,8 +484,8 @@ body {
 }
 
 .building-illustration {
-    margin: 200px auto 200px auto;
-    max-width: 200px;
+    margin: 200px auto 1000px auto;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -574,8 +596,8 @@ body {
     width: 100%;
     max-width: 720px;
     height: auto;
-    aspect-ratio: 3/4;
-    object-fit: cover;
+    aspect-ratio: auto;
+    object-fit: contain;
     border-radius: 6px;
     border: 2px solid rgba(255,255,255,0.35);
 }
@@ -994,8 +1016,10 @@ body {
     .right-column { order: 3; }
     
     .couple-photo {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
     
     .left-column, .right-column {
@@ -1090,9 +1114,9 @@ body {
     }
     
     .building-illustration {
-        width: 200px;
-        height: 200px;
-        margin: 20px auto;
+        width: 320px;
+        height: auto;
+        margin: 24px auto;
     }
     
     .location-details h3 {
@@ -1132,6 +1156,7 @@ body {
         height: auto !important;
         max-width: none !important;
         aspect-ratio: auto !important;
+        object-fit: contain !important;
         border-radius: 0 !important;
         border: none !important;
         box-shadow: none !important;
@@ -1259,8 +1284,10 @@ body {
     }
     
     .couple-photo {
-        width: 220px;
-        height: 220px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
     
     .groom-name, .bride-name {
@@ -1268,8 +1295,8 @@ body {
     }
     
     .timeline-photo {
-        width: 280px;
-        height: 280px;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -1300,8 +1327,10 @@ body {
     }
     
     .couple-photo {
-        width: 160px;
-        height: 160px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
     
     .groom-name, .bride-name {
@@ -1309,8 +1338,8 @@ body {
     }
     
     .timeline-photo {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -1342,13 +1371,15 @@ body {
     }
     
     .couple-photo {
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
     }
     
     .timeline-photo {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        height: auto;
     }
     
     .timeline-title {
@@ -1413,7 +1444,7 @@ body {
     .time-info p { font-size: 1.05rem; }
 
     /* Building + location */
-    .building-illustration { max-width: 260px; }
+    .building-illustration { max-width: 500; }
     .location-details h3 { font-size: 1.2rem; }
     .location-details p { font-size: 0.9rem; }
 
