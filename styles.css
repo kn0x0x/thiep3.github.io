@@ -68,7 +68,7 @@
     font-weight: 400;
 }
 
-.dresscode { text-align: left; align-self: start; margin-top: 10px; }
+.dresscode { text-align: left; align-self: start; margin-top: 10px; margin-left: 20px; }
 .note-dresscode .dresscode-title, .dresscode .dresscode-title {
     font-family: 'Arima Madurai', sans-serif;
     color: #273720;
@@ -243,12 +243,13 @@ body {
 }
 
 .announcement-title {
-    font-family: 'Arima Madurai', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #273720;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    font-family: 'Arima Madurai', sans-serif !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #273720 !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
 }
 
 .announcement-subtitle {
@@ -257,6 +258,7 @@ body {
     font-weight: 400;
     color: #5d5e50;
     text-transform: capitalize;
+    white-space: nowrap;
 }
 
 .main-content {
@@ -278,21 +280,22 @@ body {
 }
 
 .family-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    color: #000;
-    margin-bottom: 10px;
+    font-family: 'Arima Madurai', sans-serif;
+    font-size: 1.2rem;
     font-weight: 400;
+    color: #5d5e50;
+    text-transform: capitalize;
+    margin-bottom: 10px;
 }
 
 .parent-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-family: 'Arima Madurai', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #273720 !important;
+    margin-bottom: 5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }
 
 .couple-names-main {
@@ -303,9 +306,9 @@ body {
 .groom-name,
 .bride-name {
     font-family: 'Sharis', serif;
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 300;
-    color: #000;
+    color: #1A2B3C;
     margin: 0;
     letter-spacing: 2px;
     white-space: nowrap;
@@ -351,14 +354,12 @@ body {
 }
 
 .lunar-date {
-    font-family: 'Arima Madurai', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 400; /* regular */
-    color: #000;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
+    font-family: 'Arima Madurai', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    color: #5d5e50 !important;
+    margin-bottom: 24px !important;
+    text-transform: capitalize !important;
 }
 
 .date-english {
@@ -381,11 +382,10 @@ body {
     line-height: 1.4;
 }
 
-.ceremony-label,
-.ceremony-label-en {
+.ceremony-label {
     font-family: 'Arima Madurai', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400; /* regular */
+    font-size: 1.1rem;
+    font-weight: 700; /* bold */
     color: #3A473B;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -393,10 +393,15 @@ body {
 }
 
 .ceremony-label-en {
-    text-transform: capitalize;
-    margin-bottom: 15px;
+    font-family: 'Arima Madurai', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400; /* regular */
     color: #5d5e50;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
+
 
 .location {
     font-family: 'Arima Madurai', sans-serif;
@@ -405,6 +410,7 @@ body {
     color: #273720;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: -30px;
 }
 
 /* Invitation Section */
@@ -442,6 +448,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.4;
+    white-space: nowrap;
 }
 
 .invitation-header h3 {
@@ -474,17 +481,9 @@ body {
     margin-bottom: 15px;
 }
 
-.lunar-date {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .building-illustration {
-    margin: 200px auto 1000px auto;
+    margin: -40px auto 20px auto;
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
@@ -497,7 +496,7 @@ body {
 }
 
 .location-details {
-    margin: 40px 0;
+    margin: 10px 0;
 }
 
 .location-details h3 {
@@ -699,14 +698,14 @@ body {
 }
 
 .faq-number {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arima Madurai', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
 }
 
 .faq-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arima Madurai', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
@@ -717,7 +716,7 @@ body {
 }
 
 .faq-answer p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arima Madurai', sans-serif;
     font-size: 0.95rem;
     color: #333;
     margin-bottom: 8px;
@@ -749,14 +748,14 @@ body {
 }
 
 .gift-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Arima Madurai', sans-serif;
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 24px;
 }
 
 .gift-paragraph {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arima Madurai', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     margin: 8px auto;
@@ -777,7 +776,7 @@ body {
 .contact-section {
     background-color: #662D1E;
     color: white;
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 /* Force white links in footer (iOS auto-detected tel/mail too) */
@@ -822,47 +821,63 @@ body {
 .map-directions-btn:hover { filter: brightness(0.9); }
 
 .contact-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 420px 1fr 360px;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 40px;
     padding: 0 20px;
+    text-align: center;
 }
 
 .contact-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 5.4rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 0.95;
-    text-align: left;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .contact-info {
     display: flex;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.contact-person {
+    display: flex;
     flex-direction: column;
-    gap: 40px;
-    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex: 1;
 }
 
 .contact-person h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 .contact-person p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-family: 'Arima Madurai', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
 }
 
 .rsvp-button { display: flex; justify-content: center; align-self: center; justify-self: center; }
@@ -870,15 +885,16 @@ body {
     background-color: #F0EDE7;
     color: #000;
     border: none;
-    padding: 24px 80px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    border-radius: 6px;
+    padding: 18px 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    margin-top: 30px;
 }
 
 .rsvp-button button:hover {
@@ -905,9 +921,14 @@ body {
     }
     
     .contact-section { padding: 40px 0; }
-    .contact-container { grid-template-columns: 1fr; gap: 20px; text-align: left; }
+    .contact-container { flex-direction: column; gap: 20px; text-align: center; }
     .contact-header h2 { font-size: 3.4rem; line-height: 1.02; letter-spacing: 1px; }
-    .contact-info { flex-direction: column; gap: 16px; }
+    .contact-info { 
+        flex-direction: column; 
+        gap: 40px; 
+        align-items: center;
+        justify-content: center;
+    }
     .contact-person h3 { font-size: 1.4rem; }
     .contact-person p { font-size: 1.05rem; }
     .rsvp-button { justify-content: center; }
@@ -1116,7 +1137,7 @@ body {
     .building-illustration {
         width: 320px;
         height: auto;
-        margin: 24px auto;
+        margin: 50px auto;
     }
     
     .location-details h3 {
@@ -1431,7 +1452,7 @@ body {
     /* Date/time block */
     .date-info { margin-top: 14px; }
     .date-main { font-size: 2.2rem; }
-    .lunar-date { font-size: 0.85rem; }
+    .lunar-date { font-size: 1.05rem; }
     .day-time { font-size: 1.2rem; }
     .location { font-size: 1.3rem; }
 
